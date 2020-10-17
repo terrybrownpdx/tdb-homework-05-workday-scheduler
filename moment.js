@@ -4,31 +4,42 @@ $(document).ready(function () {
     console.log(now);
 
     var now1 = now.split(' ');
-    console.log(now1);  
+    console.log(now1);
 
-    var day = now1 [0];
+    var day = now1[0];
     console.log(day);
 
-    var month = now1 [1];
+    var month = now1[1];
     console.log(month);
 
-    var date = now1 [2];
+    var date = now1[2];
     console.log(date);
 
-    var year = now1 [3];
+    var year = now1[3];
     console.log(year);
 
-    var hourCurrent = now1 [4];
-    console.log(hour);
+    var hourCurrent = now1[4];
+    console.log(hourCurrent);
 
-    var today = day+ " " + month + " " + date + " " + year;
+    var today = day + " " + month + " " + date + " " + year;
     console.log(today)
 
     $("#currentDay").text(today);
-    //$("#hour").text(hourCurrent);
+
+        
+    if (hourCurrent === true) {
+        $("#row").css(".present");
+    }
+
+    else if (hourCurrent > ".hour") {
+        $("#row").css(".past");
+    }
+
+    else { $("#row").css(".future"); }
     
-});
-   
+    
+    })
+
 
 
 
