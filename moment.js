@@ -6,9 +6,6 @@ $(document).ready(function () {
     var now1 = now.split(' ');
     console.log(now1);  
 
-    //var today = [now1]
-    //console.log(today);
-
     var day = now1 [0];
     console.log(day);
 
@@ -21,13 +18,15 @@ $(document).ready(function () {
     var year = now1 [3];
     console.log(year);
 
-    var hour = now1 [4];
+    var hourCurrent = now1 [4];
     console.log(hour);
 
-    //var calendarYearMonthDay = document.getElementById("currentDay")
-    //var calendarHour = document.getElementById("hour")   
+    var today = day+ " " + month + " " + date + " " + year;
+    console.log(today)
 
-
+    $("#currentDay").text(today);
+    //$("#hour").text(hourCurrent);
+    
 });
    
 
