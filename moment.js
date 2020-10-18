@@ -26,19 +26,37 @@ $(document).ready(function () {
 
     $("#currentDay").text(today);
 
-        
-    if (hourCurrent === true) {
-        $("#row").css(".present");
-    }
+    var calendarInfo = "#textarea";
+    $("calendarInfo").on("click", "button")
+    localStorage.setItem("calendarInfo", calendarInfo);
+    console.log(calendarInfo);
+ 
+    $(".hour").each(function () {
 
-    else if (hourCurrent > ".hour") {
-        $("#row").css(".past");
-    }
+        //Save this id as an integer to a variable to do comparison on.
+        var timeBlock = parseInt($(this).attr('id'))
+        console.log('id')
+        //Fin the current time and assign it a variable
+        var hourCurrent = moment().hour()
+        if (hourCurrent == timeBlock) {
+            $(this).parent().addClass("present")
 
-    else { $("#row").css(".future"); }
-    
-    
+        }
+
+        else if (hourCurrent > timeBlock) {
+            $(this).parent().addClass("past")
+        }
+
+        else {
+            $(this).parent().addClass("future")
+        }
     })
+
+
+})
+
+
+
 
 
 
